@@ -1,0 +1,46 @@
+body{
+    background: linear-gradient(to right,#3f5efb,#fc466b);
+}
+
+.wrapper{
+    width: 70;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    margin: 20px;
+    font-size: 6rem;
+    color: rgb(208, 214,218);
+}
+
+.dice-area{
+    margin: 0px 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+p{
+    font-size: 2.5rem;
+    color: rgb(208, 214, 218);
+}
+
+img{
+    width: 200px;
+}
+
+#dicebtn{
+    width: 20%;
+    margin:30px auto;
+    height: 40px;
+    background: rgb(75, 117, 245);
+    color: rgb(208, 214, 218);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#above{
+    color: white;
+}
