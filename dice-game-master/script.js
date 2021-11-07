@@ -1,8 +1,8 @@
 const firstRandomNum = Math.floor(Math.random() * 6) + 1;
 const secondRandomNum = Math.floor(Math.random() * 6) + 1;
 
-const firstDiceImage = "dice" + firstRandomNum + ".png";
-const secondDiceImage = "dice" + secondRandomNum + ".png";
+const firstDiceImage = "dice" + 6 + ".png";
+const secondDiceImage = "dice" + 6 + ".png";
 
 document.querySelectorAll("img")["0"].setAttribute("src", firstDiceImage);
 document.querySelectorAll("img")["1"].setAttribute("src", secondDiceImage);
@@ -19,7 +19,9 @@ document.addEventListener("input", (e) => {
   last = e.target;
 });
 // dice logic
+
 dicebtn.addEventListener("click", () => {
+  if(last){
   const firstRandomNum = Math.floor(Math.random() * 6) + 1;
   const secondRandomNum = Math.floor(Math.random() * 6) + 1;
   // const userinp= document.getElementsByClassName('check')
@@ -40,19 +42,33 @@ dicebtn.addEventListener("click", () => {
     e.target.checked = true;
     last = e.target;
   });
-
-  if (last) {
-    total = firstRandomNum + secondRandomNum;
-    console.log(last.value,total);
-    if (last == "above" && total > 7) {
-      console.log("You won", total);
-    }
-
-    last.checked = false;
-    last.value=undefined
-  } else {
-    console.error("this is an empty check");
+total=firstRandomNum+secondRandomNum
+  console.log(last.value,total)
+  if(last.value=='above'&&total>7){
+    console.log('You Won')
   }
+  else if(last.value=='below' &&total<7){
+    console.log('You Won')
+  }
+  else if(last.value=='equal'&&total==7){
+    console.log('You Won')
+  }
+  else{
+    console.log('You Lost')
+  }
+  // if (last) {
+  //   total = firstRandomNum + secondRandomNum;
+  //   console.log(last.value,total);
+  //   last.checked = false;
+  //   last.value=undefined
+  // } else {
+  //   console.error("this is an empty check");
+  // }
+}
+else{
+  console.log('please check the checkbox')
+}
 });
+
 
 
